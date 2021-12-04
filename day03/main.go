@@ -31,7 +31,7 @@ func lifeSupport(input string) int {
 }
 
 func oxygen(input string) int {
-	numbers := adventofcode2021.MustStringList(input)
+	numbers := adventofcode2021.MustStringList(input, "\n")
 	for i := 0; i < len(numbers[0]); i++ {
 		counts := counter{}
 		for _, n := range numbers {
@@ -75,7 +75,7 @@ func oxygen(input string) int {
 }
 
 func co2(input string) int {
-	numbers := adventofcode2021.MustStringList(input)
+	numbers := adventofcode2021.MustStringList(input, "\n")
 	for i := 0; i < len(numbers[0]); i++ {
 		counts := counter{}
 		for _, n := range numbers {
@@ -121,7 +121,7 @@ func co2(input string) int {
 }
 
 func powerConsumption(input string) int {
-	numbers := adventofcode2021.MustStringList(input)
+	numbers := adventofcode2021.MustStringList(input, "\n")
 	counts := make([]counter, len(numbers[0]))
 	for _, n := range numbers {
 		for i, b := range n {

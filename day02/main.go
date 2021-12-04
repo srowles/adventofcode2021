@@ -22,7 +22,7 @@ func do2() {
 }
 
 func commands(input string) int {
-	instructions := adventofcode2021.MustStringList(input)
+	instructions := adventofcode2021.MustStringList(input, "\n")
 	depth := 0
 	horizontal := 0
 	for _, i := range instructions {
@@ -48,7 +48,7 @@ func commands(input string) int {
 }
 
 func commandsWithAim(input string) int {
-	instructions := adventofcode2021.MustStringList(input)
+	instructions := adventofcode2021.MustStringList(input, "\n")
 	depth := 0
 	horizontal := 0
 	aim := 0

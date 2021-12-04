@@ -12,14 +12,27 @@ import (
 	"time"
 )
 
+type Coord struct {
+	X, Y int
+}
+
 // MustStringListFromReader parses new line separated text into a list of strings
-func MustStringList(data string) []string {
-	lines := strings.Split(strings.TrimSpace(data), "\n")
+func MustStringList(data string, separator string) []string {
+	lines := strings.Split(strings.TrimSpace(data), separator)
 	return lines
 }
 
 func MustIntList(data string) []int {
-	lines := MustStringList(data)
+	lines := MustStringList(data, "\n")
+	result := make([]int, len(lines))
+	for i, v := range lines {
+		result[i] = MustInt(v)
+	}
+	return result
+}
+
+func MustIntCommaList(data string) []int {
+	lines := MustStringList(data, ",")
 	result := make([]int, len(lines))
 	for i, v := range lines {
 		result[i] = MustInt(v)
