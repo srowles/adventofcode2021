@@ -101,3 +101,10 @@ func MustInputFromWebsite(day string) string {
 	data := mustReadStringData(resp.Body)
 	return data
 }
+
+func Abs(n int) int {
+	if n < 0 {
+		return -n
+	}
+	return n
+}
