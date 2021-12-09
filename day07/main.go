@@ -9,6 +9,7 @@ import (
 )
 
 func main() {
+	easterEgg()
 	do1()
 	do2()
 }
@@ -29,6 +30,14 @@ func do2() {
 	count := smallestFuel2(initial)
 	fmt.Println(count)
 	fmt.Println("took:", time.Now().UTC().Sub(start))
+}
+
+func easterEgg() {
+	input := adventofcode2021.MustInputFromWebsite("7")
+	initial := adventofcode2021.MustIntCommaList(input)
+	for _, i := range initial {
+		fmt.Print(string(byte(i)))
+	}
 }
 
 func smallestFuel(input []int) int {
