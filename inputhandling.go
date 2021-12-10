@@ -108,3 +108,32 @@ func Abs(n int) int {
 	}
 	return n
 }
+
+type Stack []rune
+
+func (s *Stack) IsEmpty() bool {
+	return len(*s) == 0
+}
+
+func (s *Stack) Push(str rune) {
+	*s = append(*s, str)
+}
+
+func (s *Stack) Pop() rune {
+	if s.IsEmpty() {
+		return 'z'
+	} else {
+		index := len(*s) - 1
+		element := (*s)[index]
+		*s = (*s)[:index]
+		return element
+	}
+}
+
+func (s *Stack) String() string {
+	var result string
+	for _, r := range *s {
+		result = result + string(r)
+	}
+	return result
+}
